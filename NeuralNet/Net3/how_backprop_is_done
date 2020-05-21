@@ -1,0 +1,19 @@
+Basically we went to get a huge as tensor that holds all of the partial derivatves for the 
+error function in terms of all of the weights and all of the bias. 
+
+The way that I think this should be calculated is super recursily, but it is tough. 
+
+What I am imagining is where we could do like a getDerBias(coord) where it goes and fetches values
+from a database when it is called so each partial is only calculated once. 
+
+Then we pull from the database to change the matrix. 
+Simply for a 1w1-l-1 net it is 
+DE/DW = DE/Dl2 * Dl2/Dl1 * Dl1/Dw
+
+The problem with this is. It is fucking huge. 
+
+DE/Dl2 is a 1xn matrix
+Dl2/Dl1 is a nxm matrix
+Dl1/Dw is a nx1 matrix
+
+the idea is that if we can save the values for shit like DE/Dl2 then it is just a fuck ton of matrix multiplications. also there is a gradient for each col of the training data. 
