@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+
+
+
+\usepackage[margin=1in]{geometry}  
+\usepackage{graphicx}              
+\usepackage{amsmath}               
+\usepackage{amsfonts}              
+\usepackage{amsthm}                
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{sol}[thm]{Solution}
+\newtheorem{mydef}[thm]{Definition}
+
+\begin{document}
+\title{Math 124 Notes}
+\author{Jason Miller}
+\maketitle 
+
+\tableofcontents
+
+\newpage 
+\section{Lecture 1, 9/24}
+Beginning Topology by Sue E. Goodman will be closely followed, most resources are on their webpage, homework maybe physically submitted.  
+\begin{itemize}
+\item Chapter 1: Point set topology - lecture notes
+\item Chapter 2: Surfaces 
+\item Chapter 3: Euler characteristic, fundamental group, knot theory 
+
+\end{itemize}
+\subsection{Chapter 1, Point Set Topology}
+Def: A metric space $X$ is a non empty set with a distance function $d, X*X 
+\rightarrow \mathbb{R}^+_0$.\\
+\begin{itemize}
+\item There is a notion of symmetry, $d(x,y) = d(y,x)$
+\item Triangle inequality, $d(x,z) \leq d(x,y) + d(y,z)$
+\item $d(x,y) \longleftrightarrow x = y$ 
+\end{itemize}
+
+Some examples:
+\begin{itemize}
+\item Euclidean metric, aka $\mathbb{R}^n$ with the distance being the magnitude of the line between the points.
+\item p-metric, $\mathbb{R}^n$, but distance is $(\sum_i |x_i - y_i|^p)^{\frac{1}{p}}$. 2-metric is the same as Euclidean metric. Called a norm in Numerical Analysis. 
+\item Discrete metric, for any set $d(x,y) = 1 \longleftrightarrow x \neq y$. Like the path length in a unweighted graph. 
+\end{itemize} 
+
+$\varepsilon$-neighborhood in a metric space $(X,d)$. The set of points $y \in X$, called $B_\varepsilon (x) $ near $x$ such that $d(y,x) < \varepsilon$ and $0 < \varepsilon$.\\\\
+2-metric gives circle neighborhoods, 1-metric gives diamond, $\infty$-metric gives a square. \\\\
+For any $\emptyset \neq Y \subset X$ and $(X,d)$ is a metric space then $(Y,d)$ is a metric space.
+\\\\
+A point  $x \in X$ is called an interior point of $A \subseteq X$ if $\exists \varepsilon > 0$ such that $B_\varepsilon (x) \subseteq A$. The set of all interior points is $A^\circ$\\\\
+
+A point $x \in X$ is called a limit point (cluster point, accumulation point) of $A$ if for $\forall \varepsilon > 0, \exists y \neq x$ such that $y \in B_\varepsilon(x) \cap A$, the set of all points is called $A'$. \\\\
+A set is open if every point is interior, a set is closed if every limit point of the set belongs to A. 
+\\\\
+The closure of a set $\overline A = A \cup A'$
+$$A \subseteq \overline{A}, A^\circ \subseteq A$$
+\newpage
+\section{Lecture 2 9/27}
+
+For $(x,y)$ all points in the set are interior points, therefore it is a open set. 
+
+The set of points $A = \{\frac 1 n | n \in \mathbb{N}\}$ is a peculiar example. $0$ is a limit point of the set. The set is not closed because $A' \not \subseteq A$. $A$ also has no interior points because you can always pick a $\varepsilon < \frac 1n - \frac{1}{n+1}$ around the point $\frac 1n$.  \\\\
+If $0 \in A$ then the set would be closed. \\\\
+$$\mathbb{Q}^\circ = \emptyset, \mathbb{Q}' = \mathbb{R}$$
+\end{document}
