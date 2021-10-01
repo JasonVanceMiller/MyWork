@@ -82,6 +82,19 @@ Consider a limit point of $S_1 \times S_2$. This means that there is a $P_1 \tim
 \\\\
 The $\varepsilon$ neighborhood around a open point is a open set. This can be done with triangle inequality to find a epsilon for each of the points. 
 
+\newpage
+\section{Lecture 4 10/1}
+If $A$ and $B$ are open sets then $A \cap B$ and $A \cup B$ are open. Proof:\\\\
+For $A \cap B$, consider a point $x$ in $A$ and $B$. Because these sets are open then there is a $\varepsilon$ neighborhood in both $A$ and $B$. Choosing the smaller of the two $\varepsilon$s we can find equal neighborhoods in both $A$ and $B$ which then exists in the intersection. Repeating this for all points means that $A \cap B$ is open. \\\\
+For $A \cup  B$, any point belongs to either $A$ or $B$, and there is a $\varepsilon$ neighborhood in that respective set. This neighborhood is then in $A \cup B$. \\\\
+A infinite union of open sets is still open, but a infinite intersection of open sets is not always open. For instance consider $\cap_{n = 1}^\infty (-\frac 1 n, \frac 1 n) = \emptyset$\\\\
+For a metric space $(X,d)$ with $A \subseteq X$. $A$ is open iff $B = X \backslash A$ is closed. Proof: \\\\
+Suppose that there was a point $x$ in $B'$ and not in $B$ making it not closed. This would mean that $x \in A$ meaning that there is a radius around $x$ not in $B$, making it not a limit point of $B$. \\\\
+Suppose that there was a point $x$ in $A$ and not in $A^\circ$, making it not open. This means that there is a point not in $A$ that is arbitrarily close to $x$. But that point is in $B$ and that makes it a limit point of $B$. $B$ is closed therefore we have a contradiction. \\\\
+Some basic set properties. $X \backslash (A \cup B)$ = $X \backslash A \cap X \backslash B$ and $X \backslash (A \cap B) = X \backslash A \cup X \backslash B$ which inherit the properties of infinite unions of open sets and finite intersection of open sets. This means that the finite union of closed sets is closed and the infinite intersection of closed sets is closed. \\\\
+$(X \backslash A)^\circ = X \backslash \overline{A}$\\
+$\overline{X \backslash A} = X \backslash A^\circ$\\\\
+Definition of limit of a sequence. Limits are unique.
 
 
 

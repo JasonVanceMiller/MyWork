@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.19)  29 SEP 2021 10:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.19)  1 OCT 2021 10:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -488,24 +488,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--84
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 95.
 [5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 95.
+Underfull \hbox (badness 10000) in paragraph at lines 87--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--98
+
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 108.
+[6]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 108.
  (./MasterNotes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 95.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 95.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 108.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 108.
 Package rerunfilecheck Info: File `MasterNotes.out' has not changed.
-(rerunfilecheck)             Checksum: 23C05F2D3F8C653EA4C8C23F05F2FE4F;226.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 95.
+(rerunfilecheck)             Checksum: 90C3B20013FCF4C7D1E92477BF21235E;275.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 108.
  ) 
 Here is how much of TeX's memory you used:
- 6882 strings out of 483183
- 101208 string characters out of 5966291
+ 6885 strings out of 483183
+ 101234 string characters out of 5966291
  372488 words of memory out of 5000000
- 21768 multiletter control sequences out of 15000+600000
+ 21769 multiletter control sequences out of 15000+600000
  541438 words of font info for 59 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 34i,6n,37p,383b,315s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,6n,37p,394b,315s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/jason/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600
 pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/sha
@@ -519,10 +564,10 @@ msfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb>
-Output written on MasterNotes.pdf (5 pages, 117298 bytes).
+Output written on MasterNotes.pdf (6 pages, 121272 bytes).
 PDF statistics:
- 106 PDF objects out of 1000 (max. 8388607)
- 85 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 116 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
+ 13 named destinations out of 1000 (max. 500000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
