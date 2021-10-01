@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.19)  28 SEP 2021 15:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.19)  1 OCT 2021 09:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -408,23 +408,23 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 65.
- [3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 65.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 83.
+ [4]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 83.
 
 (./MasterNotes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 65.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 65.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 83.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 83.
 Package rerunfilecheck Info: File `MasterNotes.out' has not changed.
-(rerunfilecheck)             Checksum: 16436220148E2D1317F2F35C1A0EAF5A;100.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 65.
+(rerunfilecheck)             Checksum: 124893C8CE0F67F5EE66DCBA76B21D65;150.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 83.
  ) 
 Here is how much of TeX's memory you used:
- 6851 strings out of 483183
- 100873 string characters out of 5966291
+ 6854 strings out of 483183
+ 100899 string characters out of 5966291
  370488 words of memory out of 5000000
- 21748 multiletter control sequences out of 15000+600000
+ 21749 multiletter control sequences out of 15000+600000
  536784 words of font info for 41 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  34i,6n,37p,228b,315s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -432,10 +432,10 @@ Here is how much of TeX's memory you used:
 pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on MasterNotes.pdf (3 pages, 40121 bytes).
+Output written on MasterNotes.pdf (4 pages, 41287 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
- 42 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
- 17 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
+ 9 named destinations out of 1000 (max. 500000)
+ 25 words of extra memory for PDF output out of 10000 (max. 10000000)
 
