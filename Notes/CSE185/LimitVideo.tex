@@ -1,0 +1,228 @@
+\documentclass[11pt, twocolumn, landscape]{beamer}
+%\usepackage[margin=1in]{geometry}  
+%\usepackage{graphicx}              
+\usepackage{amsmath}               
+\usepackage{blindtext}
+\usepackage{amsfonts}              
+\usepackage{amsthm}                
+\usepackage{xcolor}
+%\usepackage{titletoc}
+%\usepackage{pgfplots}
+\usepackage{tikz}
+\def\checkmark{\tikz\fill[scale=1](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+
+%\usetikzlibrary{arrows}v
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+   filecolor=blue,
+  linkcolor=blue,
+   urlcolor=blue,
+   linktoc=all
+}
+
+
+
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}	
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{sol}[thm]{Solution}
+\newtheorem{mydef}[thm]{Definition}
+\definecolor{dank}{RGB}{10,10,150}
+\newcommand{\quest}[1]{\textcolor{dank}{#1}}
+\newcommand{\com}[1]{\textcolor{blue}{#1}}
+
+
+\title{What is Calculus?}
+
+
+\setcounter{secnumdepth}{0} % sections are level 1
+
+
+\begin{document}
+
+
+
+\frame{\titlepage} 
+
+
+
+
+
+
+\section{Approximating Length}
+\frame{\frametitle{Approximating Length}
+
+
+
+\includegraphics[scale = 0.5]{Fig0.jpg}
+
+
+}
+
+
+\frame{\frametitle{Approximating Length Attempt 1}
+\begin{columns}[onlytextwidth]
+
+\column{0.5 \textwidth}
+\includegraphics[scale = 0.3]{Fig1.jpg}
+\column{0.5 \textwidth}
+\begin{itemize}
+\item
+Our first attempt is to approximate $\sin(x)$ with 5 lines. \pause
+\item
+Approximate value is 3.9656 \pause
+\item
+But there are some obvious errors
+\end{itemize}
+\end{columns}
+}
+
+\frame{\frametitle{Approximating Length Attempt 2}
+\begin{columns}[onlytextwidth]
+
+\column{0.5 \textwidth}
+\includegraphics[scale = 0.3]{Fig2.jpg}\\
+\includegraphics[scale = 0.3]{Fig3.jpg}
+\column{0.5 \textwidth}
+
+\begin{itemize}
+\item
+Our second attempt is to use 19 lines. \pause
+\item
+Approximate value is 4.1707 \pause
+\item
+The errors are less pronounced, but are still present. \pause
+\item
+What if we could approximate the length with lines of zero length 
+\end{itemize}
+
+\end{columns}
+}
+
+
+
+\section{Zero Distance} 
+\frame{\frametitle{The Notion of Zero Distance} 
+
+
+
+
+
+\begin{align*}
+\frac{x^3-2x^2}{x - 2}& \hspace{10 mm} x \neq 2 \\\\ 
+\frac{x^2(x-2)}{(x - 2)}& \hspace{10 mm} x \neq 2 \\\\ 
+x^2& \hspace{10 mm} x \neq 2
+\end{align*}
+
+
+
+}
+
+\frame{\frametitle{What Does This Look Like}
+
+
+
+\includegraphics[scale = 0.5]{Fig4.jpg}
+
+
+}
+
+
+\frame{\frametitle{How Do We Describe This}
+\begin{columns}[onlytextwidth]
+
+\column{0.5 \textwidth}
+\includegraphics[scale = 0.3]{Fig4.jpg}
+
+\column{0.5 \textwidth}
+
+\begin{itemize}
+\item
+"If $x = 2$ was in the domain then $f(2)$ would be 4" \pause
+\item
+\textcolor{red}{But $x = 2$ is not in the domain, so this is a vacuous statement.}
+\end{itemize}
+
+\end{columns}
+}
+
+\frame{\frametitle{How Do We Describe This}
+\begin{columns}[onlytextwidth]
+
+\column{0.5 \textwidth}
+\includegraphics[scale = 0.3]{Fig4.jpg}
+
+\column{0.5 \textwidth}
+
+\begin{itemize}
+\item
+"The values of $f(x)$ around $x = 2$ have a value of 4" \pause
+\item
+\textcolor{red}{1.9 is near 2 but it has a value of $f(1.9)$ is 3.61 which isn't 4}
+\end{itemize}
+
+\end{columns}
+}
+
+\frame{\frametitle{How Do We Describe This}
+\begin{columns}[onlytextwidth]
+
+\column{0.5 \textwidth}
+\includegraphics[scale = 0.3]{Fig4.jpg}
+
+\column{0.5 \textwidth}
+
+\begin{itemize}
+\item
+"As $x$ get \textit{arbitrarily} close to 2, the value of the $f(x)$ gets \textit{arbitrarily} close to 4" \pause
+\item
+\textcolor{green}{\checkmark} \pause 
+\item
+\[\lim_{x \to 2} \frac{x^3-2x^2}{x-2} = 4\]
+\end{itemize}
+
+\end{columns}
+} 
+
+\frame{\frametitle{Revisiting the Length Problem}
+\begin{columns}[onlytextwidth]
+
+\column{0.5 \textwidth}
+\includegraphics[scale = 0.3]{Fig1.jpg}\\
+\includegraphics[scale = 0.3]{Fig2.jpg}
+\column{0.5 \textwidth}
+
+\begin{itemize}
+\item
+What we saw previously is that as the step size gets smaller, the approximation becomes more and more accurate. \pause
+\item
+It turns out that we can look at the limit as the step size approaches zero. \pause
+\item
+\[\lim_{\text{step size} \to 0} \text{approx len} = \text{true len}\]\pause
+\item
+$\int_0^1 \sqrt{1 + 4\pi^2cos^2(2\pi x)} dx$
+\end{itemize}
+
+\end{columns}
+} 
+
+
+
+\frame{\frametitle{So What is Calculus}
+\begin{itemize}
+\item
+As we have seen, calculus is all about trying to solve complex problems with infinitely many or infinitely small quantities through the use of clever manipulation and cancellation. \pause
+\item
+Some applications of calculus are: building accurate calculators, finding the orbits of planets, determining the volume and surface area of any object, modeling populations of animals in the wild, and much much more.
+
+\end{itemize}
+
+
+}
+
+
+\end{document}
