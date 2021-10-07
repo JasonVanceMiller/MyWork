@@ -1,0 +1,230 @@
+\documentclass[12pt, twocolumn, landscape]{beamer}
+\usetheme{Warsaw}
+
+
+
+%\usepackage[margin=1in]{geometry}  
+%\usepackage{graphicx}              
+\usepackage{amsmath}               
+\usepackage{blindtext}
+\usepackage{amsfonts}              
+\usepackage{amsthm}                
+\usepackage{xcolor}
+\usepackage{array}
+
+%\usepackage{titletoc}
+%\usepackage{pgfplots}
+\usepackage{tikz}
+\def\checkmark{\tikz\fill[scale=1](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+
+%\usetikzlibrary{arrows}v
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+   filecolor=blue,
+  linkcolor=blue,
+   urlcolor=blue,
+   linktoc=all
+}
+
+
+
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}	
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{sol}[thm]{Solution}
+\newtheorem{mydef}[thm]{Definition}
+
+
+
+
+\title{\textcolor{lightgray}{3d Rotation with Quaternions}}
+\author{\textcolor{lightgray}{Jason Miller}}
+\setcounter{secnumdepth}{0} % sections are level 1
+
+
+
+\setbeamercolor{normal text}{fg=white,bg=black!90}
+\setbeamercolor{structure}{fg=white}
+
+\setbeamercolor{alerted text}{fg=red!85!black}
+
+\setbeamercolor{item projected}{use=item,fg=black,bg=item.fg!35}
+
+\setbeamercolor*{palette primary}{use=structure,fg=structure.fg}
+\setbeamercolor*{palette secondary}{use=structure,fg=structure.fg!95!black}
+\setbeamercolor*{palette tertiary}{use=structure,fg=structure.fg!90!black}
+\setbeamercolor*{palette quaternary}{use=structure,fg=structure.fg!95!black,bg=black!80}
+
+\setbeamercolor*{framesubtitle}{fg=white}
+
+\setbeamercolor*{block title}{parent=structure,bg=black!60}
+\setbeamercolor*{block body}{fg=black,bg=black!10}
+\setbeamercolor*{block title alerted}{parent=alerted text,bg=black!15}
+\setbeamercolor*{block title example}{parent=example text,bg=black!15}
+
+\definecolor{lightred}{rgb}{1.0, 0.01, 0.24}
+
+\begin{document}
+
+%\definecolor{arsenic}{rgb}{0.13, 0.17, 0.19}
+%\setbeamercolor{background canvas}{bg = arsenic}
+%\color{lightgray}
+\date{}
+\frame{\maketitle} 
+
+
+
+
+
+
+
+
+\frame{\frametitle{Why Calculating Rotation in 3d is Valuable: }
+\begin{columns}[onlytextwidth]
+\column{0.5 \textwidth}
+\begin{itemize}
+\item Physics Simulations.
+\item 3d Animation.
+\item Navigation.  
+\item And MUCH MORE!
+\end{itemize}
+\column{0.5 \textwidth}
+\visible<2->{
+\begin{itemize}
+\item Rotation Around Axis.
+\item Gimbals.
+
+\end{itemize}
+}
+\end{columns}
+}
+
+
+\frame{\frametitle{Why They Fail: Rotation Around Axis}
+\begin{columns}[onlytextwidth]
+\column{0.5 \textwidth}
+Left rotation\pause
+\column{0.5 \textwidth}
+Right rotation
+\end{columns}
+}
+
+
+\frame{\frametitle{Why They Fail: Gimbals}
+\begin{columns}[onlytextwidth]
+\column{0.5 \textwidth}
+Normal Gimbal\pause
+\column{0.5 \textwidth}
+Gimbal Lock
+\end{columns}
+}
+
+
+\frame{\frametitle{What we would like}
+Stick in ball 
+}
+
+
+\frame{\frametitle{Complex Numbers}
+
+Graph overview, unit multiplication.
+
+}
+
+\frame{\frametitle{Complex Number Angles}
+
+Show briefly the angle formula for complex numbers 
+}
+
+
+\frame{\frametitle{Introduce Quaternions } 
+
+\begin{columns}[onlytextwidth]
+
+\column{0.5 \textwidth}
+\begin{center}Complex Numbers\end{center}
+\visible<2->{$$c_0\textcolor{yellow}{(1)} + c_1\textcolor{lightred}{i}$$}
+\visible<4->{$$\textcolor{lightred}{i}^2 = -\textcolor{yellow}{1}$$}
+\column{0.5 \textwidth}
+
+
+\begin{center}Quaternions\end{center}
+\visible<3->{$$c_0\textcolor{yellow}{(1)} + c_1\textcolor{lightred}{i} + c_2\textcolor{green}{j} + c_3\textcolor{cyan}{k} $$}
+\visible<5->{$$\textcolor{lightred}{i}^2 = \textcolor{green}{j}^2= \textcolor{cyan}{k}^2= -\textcolor{yellow}{1}$$}
+
+\end{columns}
+\visible<6->{The product of any 2 different complex parts gives the third and they \bf{anti-commute} }
+\visible<7->{$$\textcolor{lightred}{i} * \textcolor{green}{j} = -\textcolor{green}{j}*\textcolor{lightred}{i} = \textcolor{cyan}{k}$$}
+}
+
+\frame{\frametitle{Times Tables}
+
+\begin{center}
+\begin{tabular}{  m{1cm}|| m{1cm}| m{1cm} | m{1cm} | m{1cm} |  } 
+
+* & $\textcolor{yellow}{1}$ & $\textcolor{lightred}{i}$ & $\textcolor{green}{j}$ & $\textcolor{cyan}{k}$  \\ 
+  \hline 
+\hline
+$\textcolor{yellow}{1}$& $\textcolor{yellow}{1}$ & $\textcolor{lightred}{i}$ & $\textcolor{green}{j}$ & $\textcolor{cyan}{k}$  \\ 
+  \hline
+$\textcolor{lightred}{i}$& $\textcolor{lightred}{i}$ & -$\textcolor{yellow}{1}$ & $\textcolor{cyan}{k}$ & -$\textcolor{green}{j}$  \\ 
+  \hline
+$\textcolor{green}{j}$& $\textcolor{green}{j}$ & -$\textcolor{cyan}{k}$ & -$\textcolor{yellow}{1}$ & $\textcolor{lightred}{i}$  \\ 
+  \hline
+$\textcolor{cyan}{k}$& $\textcolor{cyan}{k}$ & $\textcolor{green}{j}$ & -$\textcolor{lightred}{i}$ & -$\textcolor{yellow}{1}$  \\ 
+\hline
+\end{tabular}
+\end{center}
+
+}
+
+
+\frame{\frametitle{But What About Rotation}
+$$\textcolor{lightred}{i} * \mathbb{H}$$
+\begin{columns}[onlytextwidth]
+
+\column{0.5 \textwidth}
+1 i graph
+\column{0.5 \textwidth}
+j k graph
+\end{columns}
+}
+
+\frame{\frametitle{But What About Rotation}
+$$\mathbb{H} * \textcolor{lightred}{i}$$
+\begin{columns}[onlytextwidth]
+
+\column{0.5 \textwidth}
+1 i graph
+\column{0.5 \textwidth}
+j k graph
+\end{columns}
+}
+
+\frame{\frametitle{The Big Idea}
+$$\textcolor{lightred}{i} * \mathbb{H} * \textcolor{lightred}{i}$$
+\begin{columns}[onlytextwidth]
+
+\column{0.5 \textwidth}
+1 i graph
+\column{0.5 \textwidth}
+j k graph
+\end{columns}
+}
+
+
+\frame{\frametitle{Rotation!}
+$$\textcolor{lightred}{i} * \mathbb{H} * \textcolor{lightred}{i}$$
+\begin{columns}[onlytextwidth]
+
+\column{0.5 \textwidth}
+1 i graph
+\column{0.5 \textwidth}
+j k graph
+\end{columns}
+}
+\end{document}
