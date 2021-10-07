@@ -16,6 +16,7 @@
 \newtheorem{cor}[thm]{Corollary}
 \newtheorem{sol}[thm]{Solution}
 \newtheorem{mydef}[thm]{Definition}
+\usepackage{amsmath}
 
 \begin{document}
 \title{Math 124 Notes}
@@ -105,7 +106,18 @@ $x_n$ can equal $x$\\\\
 $A$ is closed if for every sequnce the limit of that sequence is in $A$.\\\\
 Two metrics, $d1$ and $d2$ are equivilent if $\forall x, \varepsilon > 0, \exists \delta > 0$ such that $B^2_\delta(x) \subseteq B^1_\varepsilon(x)$ and vice versa. This makes one set being open means the other is open.  
 
-
+\newpage
+\section{Lecture 6 10/6}
+If two metric spaces are equivalent then the ideas of openness, closedness, limit points and convergence. \\\\
+A topological space is a set $X \neq \emptyset$ togehter with a collection $\tau \subseteq P(X)$ called the topology of $X$. $$\emptyset, X \in \tau$$
+$$A,B \in \tau \longrightarrow A \cap B \in \tau$$
+$$A_n \in \tau \longrightarrow \bigcup A_n \in \tau$$
+The sets in $\tau$ are called the open sets.\\\\
+$\tau = \{\emptyset, X\}$ is called the trivial topoogy. \\\\
+$b$ is called the basis of a topology if: \\
+i) if for $B_1, B_2 \in b$, and $z \in B_1 \cap B_2$, then there exists $B \in b$ with $z \in B \subseteq B_1 \cap B_2$\\
+ii) for every $x \in X$ there exists $B \in b$ with $x \in B$\\\\
+THM: the union of all $B \in b$ is $\tau$
 
 
 
