@@ -13,7 +13,7 @@
 \usepackage{array}
 
 %\usepackage{titletoc}
-%\usepackage{pgfplots}
+\usepackage{pgfplots}
 \usepackage{tikz}
 \def\checkmark{\tikz\fill[scale=1](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
 
@@ -124,14 +124,18 @@ Gimbal Lock
 }
 
 
-\frame{\frametitle{What we would like}
+\frame{\frametitle{What We Would Like}
 Stick in ball 
 }
 
 
 \frame{\frametitle{Complex Numbers}
 
-Graph overview, unit multiplication.
+\begin{tikzpicture}
+\begin{axis}
+\addplot[color=red]{x^2 + y^2 = 1};
+\end{axis}
+\end{tikzpicture}
 
 }
 
