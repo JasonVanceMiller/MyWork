@@ -13,7 +13,7 @@
 \usepackage{array}
 
 %\usepackage{titletoc}
-%\usepackage{pgfplots}
+\usepackage{pgfplots}
 \usepackage{tikz}
 \def\checkmark{\tikz\fill[scale=1](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
 
@@ -130,9 +130,25 @@ Stick in ball
 
 
 \frame{\frametitle{Complex Numbers}
-
-Graph overview, unit multiplication.
-
+$$\textcolor{lightred}{i} * \mathbb{C}$$
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    trig format plots=rad,
+    axis equal,
+	axis lines = center,
+x label style={anchor=north},
+    y label style={anchor=south},
+   xlabel = \( \textcolor{yellow}{(1)} \),
+    ylabel = {\( \textcolor{lightred}{i}  \)},
+      yticklabels={,,},
+      xticklabels={,,}
+]
+ \addplot[->,line width=1.2pt,color=white,samples=100,domain=0:pi/2] plot({0.9*cos(\x)},{0.9*sin(\x)});
+\addplot [domain=0:2*pi, samples=200, white, color = gray] ({sin(x)}, {cos(x)});
+\end{axis}
+\end{tikzpicture}
+\end{center}
 }
 
 \frame{\frametitle{Complex Number Angles}
@@ -188,9 +204,47 @@ $$\textcolor{lightred}{i} * \mathbb{H}$$
 \begin{columns}[onlytextwidth]
 
 \column{0.5 \textwidth}
-1 i graph
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}[
+    trig format plots=rad,
+    axis equal,
+	axis lines = center,
+x axis line style = yellow,
+y axis line style = red,
+x label style={anchor=south},
+    y label style={anchor=west},
+   xlabel = \( \textcolor{yellow}{(1)} \),
+    ylabel = {\( \textcolor{lightred}{i}  \)},
+      yticklabels={,,},
+      xticklabels={,,}
+]
+ \addplot[->,line width=1.2pt,color=white,samples=100,domain=0:pi/2] plot({0.9*cos(\x)},{0.9*sin(\x)});
+\addplot [domain=0:2*pi, samples=200, white, color = gray] ({sin(x)}, {cos(x)});
+\end{axis}
+\end{tikzpicture}
+\end{center}
 \column{0.5 \textwidth}
-j k graph
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}[
+    trig format plots=rad,
+    axis equal,
+	axis lines = center,
+x axis line style = green,
+y axis line style = cyan,
+x label style={anchor=south},
+    y label style={anchor=west},
+   xlabel = \( \textcolor{green}{j} \),
+    ylabel = {\( \textcolor{cyan}{k}  \)},
+      yticklabels={,,},
+      xticklabels={,,}
+]
+ \addplot[->,line width=1.2pt,color=white,samples=100,domain=0:pi/2] plot({0.9*cos(\x)},{0.9*sin(\x)});
+\addplot [domain=0:2*pi, samples=200, white, color = gray] ({sin(x)}, {cos(x)});
+\end{axis}
+\end{tikzpicture}
+\end{center}
 \end{columns}
 }
 
@@ -199,9 +253,47 @@ $$\mathbb{H} * \textcolor{lightred}{i}$$
 \begin{columns}[onlytextwidth]
 
 \column{0.5 \textwidth}
-1 i graph
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}[
+    trig format plots=rad,
+    axis equal,
+	axis lines = center,
+x axis line style = yellow,
+y axis line style = red,
+x label style={anchor=south},
+    y label style={anchor=west},
+   xlabel = \( \textcolor{yellow}{(1)} \),
+    ylabel = {\( \textcolor{lightred}{i}  \)},
+      yticklabels={,,},
+      xticklabels={,,}
+]
+ \addplot[->,line width=1.2pt,color=white,samples=100,domain=0:pi/2] plot({0.9*cos(\x)},{0.9*sin(\x)});
+\addplot [domain=0:2*pi, samples=200, white, color = gray] ({sin(x)}, {cos(x)});
+\end{axis}
+\end{tikzpicture}
+\end{center}
 \column{0.5 \textwidth}
-j k graph
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}[
+    trig format plots=rad,
+    axis equal,
+	axis lines = center,
+x axis line style = green,
+y axis line style = cyan,
+x label style={anchor=south},
+    y label style={anchor=west},
+   xlabel = \( \textcolor{green}{j} \),
+    ylabel = {\( \textcolor{cyan}{k}  \)},
+      yticklabels={,,},
+      xticklabels={,,}
+]
+ \addplot[->,line width=1.2pt,color=white,samples=100,domain=0:pi/2] plot({0.9*cos(\x)},{-0.9*sin(\x)});
+\addplot [domain=0:2*pi, samples=200, white, color = gray] ({sin(x)}, {cos(x)});
+\end{axis}
+\end{tikzpicture}
+\end{center}
 \end{columns}
 }
 
@@ -210,9 +302,49 @@ $$\textcolor{lightred}{i} * \mathbb{H} * \textcolor{lightred}{i}$$
 \begin{columns}[onlytextwidth]
 
 \column{0.5 \textwidth}
-1 i graph
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}[
+    trig format plots=rad,
+    axis equal,
+	axis lines = center,
+x axis line style = yellow,
+y axis line style = red,
+x label style={anchor=south},
+    y label style={anchor=west},
+   xlabel = \( \textcolor{yellow}{(1)} \),
+    ylabel = {\( \textcolor{lightred}{i}  \)},
+      yticklabels={,,},
+      xticklabels={,,}
+]
+ \addplot[->,line width=1.2pt,color=white,samples=100,domain=0:pi/2] plot({0.9*cos(\x)},{0.9*sin(\x)});
+\addplot[->,line width=1.2pt,color=white,samples=100,domain=pi/2:pi] plot({0.8*cos(\x)},{0.8*sin(\x)});
+\addplot [domain=0:2*pi, samples=200, white, color = gray] ({sin(x)}, {cos(x)});
+\end{axis}
+\end{tikzpicture}
+\end{center}
 \column{0.5 \textwidth}
-j k graph
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}[
+    trig format plots=rad,
+    axis equal,
+	axis lines = center,
+x axis line style = green,
+y axis line style = cyan,
+x label style={anchor=south},
+    y label style={anchor=west},
+   xlabel = \( \textcolor{green}{j} \),
+    ylabel = {\( \textcolor{cyan}{k}  \)},
+      yticklabels={,,},
+      xticklabels={,,}
+]
+ \addplot[->,line width=1.2pt,color=white,samples=100,domain=0:pi/2] plot({0.9*sin(\x)},{0.9*cos(\x)});
+\addplot[->,line width=1.2pt,color=white,samples=100,domain=0:pi/2] plot({0.8*cos(\x)},{0.8*sin(\x)});
+\addplot [domain=0:2*pi, samples=200, white, color = gray] ({sin(x)}, {cos(x)});
+\end{axis}
+\end{tikzpicture}
+\end{center}
 \end{columns}
 }
 
