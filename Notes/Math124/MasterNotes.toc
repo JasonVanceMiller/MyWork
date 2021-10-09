@@ -5,3 +5,4 @@
 \contentsline {section}{\numberline {4}Lecture 4 10/1}{6}{section.4}%
 \contentsline {section}{\numberline {5}Lecture 5 10/4}{7}{section.5}%
 \contentsline {section}{\numberline {6}Lecture 6 10/6}{8}{section.6}%
+\contentsline {section}{\numberline {7}Lecture 7, 10/8}{9}{section.7}%
