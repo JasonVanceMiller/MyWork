@@ -127,10 +127,17 @@ We are going over some properties of basies. If a basis generates a topology for
 If we have a topological space and we intersect it with a subset of its domain then it is still a topological space. And a basis under this intersection will also generate a topology for this subset. These are also trivial because properties like unions and intersections don't concern themselves with points outside of the set. \\\\
 Hausdorff Property: first degree seperation. \\\\
 This property is that if for every two distince points, there exists a pair sets in the topology that do not intersect and repectfully contain one of the points each. Examples are the discrete topology with the singular sets. Another one would be if the basis for the topology was all rows and columns on the chess board. Metric spaces are Hausdorff because we can choose a small enough radius around each points as to exclude any point.\\\\
-Topologically a point is called a limit point of $A$ if for all $x \in U \in \tau$, $A \cap U \backslash x \neq \emptyset$, meaning that it can be isolated at the edge kinda. \\\\
-Topologically a point is called a interior point of $A$ if for all  $U \in \tau$ such that $x \in U \subseteq A$\\\\
+Topologically a point is called a limit point of $A$ if for all $x \in U \in \tau$, $A \cap U \backslash x \neq \emptyset$, meaning that it can be arbitarially approached \\\\
+Topologically a point is called a interior point of $A$ if there exists  $U \in \tau$ such that $x \in U \subseteq A$\\\\
 Infinite intersections and finite unions of closed sets are still closed. $X \backslash A$ is open if $A$ is closed 
 
+\newpage
+\section{Lecture 8, 10/11}
+Definition of convergence on a topological space is, given a sequence of $\{x_n\}$, for any neighborhood of $x$, there exists a $N$ such that for $n \geq N$ all of those points in the sequence are in that set. \\\\
+Definition of continuity on a metric space. For $\forall \varepsilon, \exists \delta, d_1(x,y) < \delta \longrightarrow d_2(f(x),f(y)) < \varepsilon$ across possibly two metric spaces with metrics $d_1$ and $d_2$.\\\\
+You can say it is continuous on a point if you fix $x$. \\\\
+Continuity on a topological space: $\forall U \in \tau_y$ with $f(a) \in U$, $\exists V \in \tau_x$ with $a \in V, V \subseteq f^{-1}(U)$\\\\
+If it is continuous on the basis then it is continuous on the topology. 
 
 
 

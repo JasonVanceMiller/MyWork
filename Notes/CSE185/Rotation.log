@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.19)  8 OCT 2021 18:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.19)  11 OCT 2021 09:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1049,38 +1049,50 @@ your preamble.
 (./Rotation.nav) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 87.
+[2
 
+]
+<Rot.png, id=78, 200.75pt x 145.54375pt>
+File: Rot.png Graphic file (type png)
+<use Rot.png>
+Package pdftex.def Info: Rot.png  used on input line 87.
+(pdftex.def)             Requested size: 200.7495pt x 145.54338pt.
+ [3
+
+ <./Rot.png>]
+<Plane.png, id=107, 639.89063pt x 304.88907pt>
+File: Plane.png Graphic file (type png)
+<use Plane.png>
+Package pdftex.def Info: Plane.png  used on input line 92.
+(pdftex.def)             Requested size: 319.94452pt x 152.44415pt.
+
+Overfull \hbox (12.65465pt too wide) in paragraph at lines 92--92
+ [] 
+ []
+
+[4
+
+ <./Plane.png>]
+<Ball.png, id=135, 176.66pt x 183.887pt>
+File: Ball.png Graphic file (type png)
+<use Ball.png>
+Package pdftex.def Info: Ball.png  used on input line 98.
+(pdftex.def)             Requested size: 176.65956pt x 183.88654pt.
+ [5
+
+ <./Ball.png>]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 125
+.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 87.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 125
+.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [2
-
-] [3
-
-]
-<Rot.png, id=104, 200.75pt x 145.54375pt>
-File: Rot.png Graphic file (type png)
-<use Rot.png>
-Package pdftex.def Info: Rot.png  used on input line 94.
-(pdftex.def)             Requested size: 200.7495pt x 145.54338pt.
- [4
-
- <./Rot.png>]
-<Ball.png, id=134, 176.66pt x 183.887pt>
-File: Ball.png Graphic file (type png)
-<use Ball.png>
-Package pdftex.def Info: Ball.png  used on input line 101.
-(pdftex.def)             Requested size: 176.65956pt x 183.88654pt.
- [5
-
- <./Ball.png>] [6
+) [6
 
 ] [7
 
@@ -1088,7 +1100,8 @@ Package pdftex.def Info: Ball.png  used on input line 101.
 
 ] [9
 
-] [10
+]
+[10
 
 ] [11
 
@@ -1102,8 +1115,7 @@ Package pdftex.def Info: Ball.png  used on input line 101.
 
 ] [16
 
-]
-[17
+] [17
 
 ] [18
 
@@ -1112,18 +1124,24 @@ Package pdftex.def Info: Ball.png  used on input line 101.
 ]
 File: Ball.png Graphic file (type png)
 <use Ball.png>
-Package pdftex.def Info: Ball.png  used on input line 420.
+Package pdftex.def Info: Ball.png  used on input line 417.
 (pdftex.def)             Requested size: 176.65956pt x 183.88654pt.
 
-Overfull \vbox (3.14774pt too high) detected at line 420
+Overfull \vbox (3.14774pt too high) detected at line 417
  []
 
 [20
 
 ]
-Overfull \hbox (8.51454pt too wide) in paragraph at lines 433--433
+Overfull \hbox (8.51454pt too wide) in paragraph at lines 431--431
 \OT1/cmss/m/n/10.95 https://upload.wikimedia.org/wikipedia/commons/thumb/5/51  
 
+ []
+
+
+Overfull \hbox (147.54921pt too wide) in paragraph at lines 431--431
+\OT1/cmss/m/n/10.95 Tannous/publication/331745225/figure/fig14/AS:7364300662456
+32@1552590018281/Gimbal- 
  []
 
 [21
@@ -1138,19 +1156,19 @@ Overfull \hbox (8.51454pt too wide) in paragraph at lines 433--433
 \tf@snm=\write8
 \openout8 = `Rotation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 434.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 434.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 432.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 432.
  (./Rotation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 434.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 434.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 432.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 432.
 Package rerunfilecheck Info: File `Rotation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31326 strings out of 483183
- 758387 string characters out of 5966291
- 1275520 words of memory out of 5000000
- 45665 multiletter control sequences out of 15000+600000
+ 31336 strings out of 483183
+ 758501 string characters out of 5966291
+ 1275620 words of memory out of 5000000
+ 45674 multiletter control sequences out of 15000+600000
  539556 words of font info for 50 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  73i,15n,102p,792b,2478s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1163,10 +1181,10 @@ t/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msbm10.pfb>
-Output written on Rotation.pdf (21 pages, 179628 bytes).
+Output written on Rotation.pdf (21 pages, 246697 bytes).
 PDF statistics:
- 631 PDF objects out of 1000 (max. 8388607)
+ 632 PDF objects out of 1000 (max. 8388607)
  579 compressed objects within 6 object streams
  43 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
