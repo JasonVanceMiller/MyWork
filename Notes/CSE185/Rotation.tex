@@ -38,29 +38,19 @@
 \newtheorem{sol}[thm]{Solution}
 \newtheorem{mydef}[thm]{Definition}
 
-
-
-
 \title{\textcolor{lightgray}{3d Rotation with Quaternions}}
 \author{\textcolor{lightgray}{Jason Miller}}
 \setcounter{secnumdepth}{0} % sections are level 1
 
-
-
 \setbeamercolor{normal text}{fg=white,bg=black!90}
 \setbeamercolor{structure}{fg=white}
-
 \setbeamercolor{alerted text}{fg=red!85!black}
-
 \setbeamercolor{item projected}{use=item,fg=black,bg=item.fg!35}
-
 \setbeamercolor*{palette primary}{use=structure,fg=structure.fg}
 \setbeamercolor*{palette secondary}{use=structure,fg=structure.fg!95!black}
 \setbeamercolor*{palette tertiary}{use=structure,fg=structure.fg!90!black}
 \setbeamercolor*{palette quaternary}{use=structure,fg=structure.fg!95!black,bg=black!80}
-
 \setbeamercolor*{framesubtitle}{fg=white}
-
 \setbeamercolor*{block title}{parent=structure,bg=black!60}
 \setbeamercolor*{block body}{fg=black,bg=black!10}
 \setbeamercolor*{block title alerted}{parent=alerted text,bg=black!15}
@@ -76,84 +66,90 @@
 \date{}
 \frame{\maketitle} 
 
-
-
-
-
-
-
-
 \frame{\frametitle{Why Calculating Rotation in 3d is Valuable: }
-\begin{columns}[onlytextwidth]
-\column{0.5 \textwidth}
+\begin{Large}
+\begin{center}
 \begin{itemize}
 \item Physics Simulations.
-\item 3d Animation.
-\item Navigation.  
+\item Animation.
+\item Mathematical Modeling.  
+\item Navigation. 
 \item And MUCH MORE!
 \end{itemize}
-\column{0.5 \textwidth}
-\visible<2->{
-\begin{itemize}
-\item Rotation Around Axis.
-\item Gimbals.
-
-\end{itemize}
-}
-\end{columns}
+\end{center}
+\end{Large}
 }
 
-
-\frame{\frametitle{Why They Fail: Rotation Around Axis}
-\begin{columns}[onlytextwidth]
-\column{0.5 \textwidth}
-Left rotation\pause
-\column{0.5 \textwidth}
-Right rotation
-\end{columns}
+\frame{\frametitle{Why They Fail: Rotation Around Axes}
+\begin{center}
+\includegraphics{Rot.png} 
+\end{center}
+}
+\frame{\frametitle{Why They Fail: Plane}
+\begin{center}
+\includegraphics[scale = 0.5]{Plane.png}
+\end{center}
 }
 
-
-\frame{\frametitle{Why They Fail: Gimbals}
-\begin{columns}[onlytextwidth]
-\column{0.5 \textwidth}
-Normal Gimbal\pause
-\column{0.5 \textwidth}
-Gimbal Lock
-\end{columns}
+\frame{\frametitle{What We Want}
+\begin{center}
+\includegraphics{Ball.png}
+\end{center}
 }
 
-
-\frame{\frametitle{What we would like}
-Stick in ball 
-}
-
-
+%CN 1
 \frame{\frametitle{Complex Numbers}
 $$\textcolor{lightred}{i} * \mathbb{C}$$
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=1]
 \begin{axis}[
     trig format plots=rad,
     axis equal,
 	axis lines = center,
-x label style={anchor=north},
-    y label style={anchor=south},
+x axis line style = yellow,
+y axis line style = red,
+x label style={anchor=south},
+    y label style={anchor=west},
    xlabel = \( \textcolor{yellow}{(1)} \),
     ylabel = {\( \textcolor{lightred}{i}  \)},
       yticklabels={,,},
       xticklabels={,,}
 ]
+\addplot [color = white] ({1}, {0});
  \addplot[->,line width=1.2pt,color=white,samples=100,domain=0:pi/2] plot({0.9*cos(\x)},{0.9*sin(\x)});
-\addplot [domain=0:2*pi, samples=200, white, color = gray] ({sin(x)}, {cos(x)});
+\addplot [domain=0:2*pi, samples=200, white, color = gray] ({cos(x)}, {sin(x)});
+\addplot [domain=0:2*pi, samples=200, white, color = white] ({0.05 * cos(x) + 0.9}, {0.05 *sin(x)});
 \end{axis}
 \end{tikzpicture}
 \end{center}
 }
 
+%CN 2
 \frame{\frametitle{Complex Number Angles}
-
-Show briefly the angle formula for complex numbers 
+$$(\cos \theta \textcolor{yellow}{(1)} + \sin \theta \textcolor{lightred}{i}) * \mathbb{C}$$
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[
+    trig format plots=rad,
+    axis equal,
+	axis lines = center,
+x axis line style = yellow,
+y axis line style = red,
+x label style={anchor=south},
+    y label style={anchor=west},
+   xlabel = \( \textcolor{yellow}{(1)} \),
+    ylabel = {\( \textcolor{lightred}{i}  \)},
+      yticklabels={,,},
+      xticklabels={,,}
+]
+\addplot [color = white] ({1}, {0});
+ \addplot[->,line width=1.2pt,color=white,samples=100,domain=0:1] plot({0.9*cos(\x)},{0.9*sin(\x)});
+\addplot [domain=0:2*pi, samples=200, color = gray] ({cos(x)}, {sin(x)});
+\addplot [domain=0:2*pi, samples=200, color = white] ({0.05 * cos(x) + 0.9}, {0.05 *sin(x)});
+\addplot [domain=0:0.9, samples = 5, color = white] ({x * cos(1)},{x * sin(1)}) node[below,pos=0.3] {$\theta$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
 }
 
 
@@ -173,7 +169,7 @@ Show briefly the angle formula for complex numbers
 \visible<5->{$$\textcolor{lightred}{i}^2 = \textcolor{green}{j}^2= \textcolor{cyan}{k}^2= -\textcolor{yellow}{1}$$}
 
 \end{columns}
-\visible<6->{The product of any 2 different complex parts gives the third and they \bf{anti-commute} }
+\visible<6->{The product of any 2 different complex parts gives the third and any two different complex parts \bf{anti-commute}. }
 \visible<7->{$$\textcolor{lightred}{i} * \textcolor{green}{j} = -\textcolor{green}{j}*\textcolor{lightred}{i} = \textcolor{cyan}{k}$$}
 }
 
@@ -221,6 +217,8 @@ x label style={anchor=south},
 ]
  \addplot[->,line width=1.2pt,color=white,samples=100,domain=0:pi/2] plot({0.9*cos(\x)},{0.9*sin(\x)});
 \addplot [domain=0:2*pi, samples=200, white, color = gray] ({sin(x)}, {cos(x)});
+\addplot [domain=0:2*pi, samples=200, white, color = white] ({0.05 * cos(x) + 0.9}, {0.05 *sin(x)});
+
 \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -242,6 +240,7 @@ x label style={anchor=south},
 ]
  \addplot[->,line width=1.2pt,color=white,samples=100,domain=0:pi/2] plot({0.9*cos(\x)},{0.9*sin(\x)});
 \addplot [domain=0:2*pi, samples=200, white, color = gray] ({sin(x)}, {cos(x)});
+\addplot [domain=0:2*pi, samples=200, white, color = white] ({0.05 * cos(x) + 0.9}, {0.05 *sin(x)});
 \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -270,6 +269,7 @@ x label style={anchor=south},
 ]
  \addplot[->,line width=1.2pt,color=white,samples=100,domain=0:pi/2] plot({0.9*cos(\x)},{0.9*sin(\x)});
 \addplot [domain=0:2*pi, samples=200, white, color = gray] ({sin(x)}, {cos(x)});
+\addplot [domain=0:2*pi, samples=200, white, color = white] ({0.05 * cos(x) + 0.9}, {0.05 *sin(x)});
 \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -291,6 +291,7 @@ x label style={anchor=south},
 ]
  \addplot[->,line width=1.2pt,color=white,samples=100,domain=0:pi/2] plot({0.9*cos(\x)},{-0.9*sin(\x)});
 \addplot [domain=0:2*pi, samples=200, white, color = gray] ({sin(x)}, {cos(x)});
+\addplot [domain=0:2*pi, samples=200, white, color = white] ({0.05 * cos(x) + 0.9}, {0.05 *sin(x)});
 \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -318,8 +319,9 @@ x label style={anchor=south},
       xticklabels={,,}
 ]
  \addplot[->,line width=1.2pt,color=white,samples=100,domain=0:pi/2] plot({0.9*cos(\x)},{0.9*sin(\x)});
-\addplot[->,line width=1.2pt,color=white,samples=100,domain=pi/2:pi] plot({0.8*cos(\x)},{0.8*sin(\x)});
+\addplot[->,line width=1.2pt,color=white,samples=100,domain=pi/2:pi] plot({0.85*cos(\x)},{0.85*sin(\x)});
 \addplot [domain=0:2*pi, samples=200, white, color = gray] ({sin(x)}, {cos(x)});
+\addplot [domain=0:2*pi, samples=200, white, color = white] ({0.05 * cos(x) + 0.9}, {0.05 *sin(x)});
 \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -339,9 +341,10 @@ x label style={anchor=south},
       yticklabels={,,},
       xticklabels={,,}
 ]
- \addplot[->,line width=1.2pt,color=white,samples=100,domain=0:pi/2] plot({0.9*sin(\x)},{0.9*cos(\x)});
-\addplot[->,line width=1.2pt,color=white,samples=100,domain=0:pi/2] plot({0.8*cos(\x)},{0.8*sin(\x)});
+ \addplot[->,line width=1.2pt,color=white,samples=100,domain=0:pi/2] plot({0.8*sin(\x)},{0.8*cos(\x)});
+\addplot[->,line width=1.2pt,color=white,samples=100,domain=0:pi/2] plot({0.9*cos(\x)},{0.9*sin(\x)});
 \addplot [domain=0:2*pi, samples=200, white, color = gray] ({sin(x)}, {cos(x)});
+\addplot [domain=0:2*pi, samples=200, white, color = white] ({0.05 * cos(x) + 0.9}, {0.05 *sin(x)});
 \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -350,13 +353,80 @@ x label style={anchor=south},
 
 
 \frame{\frametitle{Rotation!}
-$$\textcolor{lightred}{i} * \mathbb{H} * \textcolor{lightred}{i}$$
+$$(\cos \theta \textcolor{yellow}{(1)} + \sin \theta \textcolor{lightred}{i})* \mathbb{H} * (\cos \theta \textcolor{yellow}{(1)} + \sin \theta \textcolor{lightred}{i})$$
 \begin{columns}[onlytextwidth]
 
 \column{0.5 \textwidth}
-1 i graph
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}[
+    trig format plots=rad,
+    axis equal,
+	axis lines = center,
+x axis line style = yellow,
+y axis line style = red,
+x label style={anchor=south},
+    y label style={anchor=west},
+   xlabel = \( \textcolor{yellow}{(1)} \),
+    ylabel = {\( \textcolor{lightred}{i}  \)},
+      yticklabels={,,},
+      xticklabels={,,}
+]
+ \addplot[->,line width=1.2pt,color=white,samples=100,domain=0:1] plot({0.9*cos(\x)},{0.9*sin(\x)});
+\addplot[->,line width=1.2pt,color=white,samples=100,domain=1:2] plot({0.9*cos(\x)},{0.9*sin(\x)});
+\addplot [domain=0:2*pi, samples=200, white, color = gray] ({sin(x)}, {cos(x)});
+\addplot [domain=0:2*pi, samples=200, white, color = white] ({0.05 * cos(x) + 0.9}, {0.05 *sin(x)});
+\addplot [domain=0:0.9, samples = 5, color = white] ({x * cos(1)},{x * sin(1)}) node[below,pos=0.3] {$\theta$};
+\addplot [domain=0:0.9, samples = 5, color = white] ({x * cos(2)},{x * sin(2)}) node[right,pos=0.3] {$\theta$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
 \column{0.5 \textwidth}
-j k graph
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}[
+    trig format plots=rad,
+    axis equal,
+	axis lines = center,
+x axis line style = green,
+y axis line style = cyan,
+x label style={anchor=south},
+    y label style={anchor=west},
+   xlabel = \( \textcolor{green}{j} \),
+    ylabel = {\( \textcolor{cyan}{k}  \)},
+      yticklabels={,,},
+      xticklabels={,,}
+]
+ \addplot[->,line width=1.2pt,color=white,samples=100,domain=pi/2 - 1:pi/2] plot({0.8*sin(\x)},{0.8*cos(\x)});
+\addplot[->,line width=1.2pt,color=white,samples=100,domain=0:1] plot({0.9*cos(\x)},{0.9*sin(\x)});
+\addplot [domain=0:2*pi, samples=200, white, color = gray] ({sin(x)}, {cos(x)});
+\addplot [domain=0:2*pi, samples=200, white, color = white] ({0.05 * cos(x) + 0.9}, {0.05 *sin(x)});
+\addplot [domain=0:0.9, samples = 5, color = white] ({x * cos(1)},{x * sin(1)});
+\end{axis}
+\end{tikzpicture}
+\end{center}
 \end{columns}
+}
+
+\frame{\frametitle{3d Rotation}
+$$(\cos \frac \theta 2 \textcolor{yellow}{(1)} + \sin \frac \theta 2 \textcolor{pink}{\overrightarrow{v}})* \mathbb{H} * (\cos \frac {-\theta}{2} \textcolor{yellow}{(1)}  + \sin \frac {-\theta}{2} \textcolor{pink}{\overrightarrow{v}})$$
+
+\begin{center}
+\includegraphics{Ball.png}
+\end{center}
+}
+
+\frame{\frametitle{References}
+Images: \\
+\begin{itemize}
+\item \small{https://upload.wikimedia.org/wikipedia/commons/thumb/5/51\\/Euler\_AxisAngle.png/220px-Euler\_AxisAngle.png}\\
+\item \small{https://cdn.kastatic.org/ka-perseus-images/d24dd08a0ea7aaeeaa90d84f642e12998df3ffe7.svg}\\
+\item \small{https://www.researchgate.net/profile/Halim-Tannous/publication/331745225/figure/fig14/AS:736430066245632@1552590018281/Gimbal-lock-problem-for-Euler-angles-A-no-gimbal-lock-B-yaw-and-roll-angles-are.jpg}
+\end{itemize}
+Work Cited: \\
+\begin{itemize}
+\item J. M. Chappel, A. Iqbal, J. G. Hartnett, and D. Abbott, \textit{The Vector Algebra War: A Historial Perspective} arXiv, 2015\\
+ \item J. B. Kuipers. \textit{Quaternions and Rotation Sequences}. Princeton University Press, 1999.
+\end{itemize}
 }
 \end{document}
