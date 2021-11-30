@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.19)  11 OCT 2021 10:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.19)  15 OCT 2021 10:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -613,21 +613,51 @@ Underfull \hbox (badness 10000) in paragraph at lines 136--141
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 144.
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--150
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--150
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--150
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--150
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--150
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--150
+
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 151.
 [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 144.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 151.
  (./MasterNotes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 144.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 144.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 151.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 151.
 Package rerunfilecheck Info: File `MasterNotes.out' has not changed.
-(rerunfilecheck)             Checksum: E0B2525B09ED51B180C0E9D979BC53A6;474.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 144.
+(rerunfilecheck)             Checksum: 0AC60258751CDD38CEF435FEBB3FB266;527.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 151.
  ) 
 Here is how much of TeX's memory you used:
- 6897 strings out of 483183
- 101339 string characters out of 5966291
+ 6899 strings out of 483183
+ 101359 string characters out of 5966291
  372488 words of memory out of 5000000
- 21773 multiletter control sequences out of 15000+600000
+ 21774 multiletter control sequences out of 15000+600000
  541438 words of font info for 59 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  34i,6n,37p,459b,315s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -644,10 +674,10 @@ msfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb>
-Output written on MasterNotes.pdf (10 pages, 131880 bytes).
+Output written on MasterNotes.pdf (10 pages, 134287 bytes).
 PDF statistics:
- 156 PDF objects out of 1000 (max. 8388607)
- 129 compressed objects within 2 object streams
- 21 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 161 PDF objects out of 1000 (max. 8388607)
+ 134 compressed objects within 2 object streams
+ 22 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
