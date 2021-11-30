@@ -13,7 +13,7 @@
 \usepackage{graphicx}
 \usepackage{adjustbox}
 \usepackage{enumitem}
-\usepackage[backend=biber,style=numeric]{biblatex}
+%\usepackage[backend=biber,style=numeric]{biblatex}
 
 
 %Chess Stuff
@@ -235,8 +235,31 @@ strategies that provide new insights into the oldest of games."\cite{AlphaZero}
 
 \par For hundreds of years people would play almost exclusively the 3-4 point and rejected the 4-4 point. Why would you play a move that doesn't guarantee any points? You aren't actually building value. This was until  a player by the name of Go Seigen came along and popularized the 4-4 point in the early 1900s. The philosophy behind the 4-4 point was: it would be dumb for white fight for the corner territory for a 3-3 or 3-4 enclosure because there are so few points. Likewise it would be dumb for white to try to take the outside when black plays the 4-4 enclosure, because the corner territory is so profitable. The key insight being that there is a balance between the tangible value that the corner territory gives, and the intangible value that owning the outside has. The 3-4 is the farthest move from the corner that has a slight preference for the inside and the 4-4 point is the closest move to the corner that has a slight preference for the outside. Both of these moves bookend a mystical optimal distance from the corner that balances the value of the inside and the outside perfectly. Because of this both should be considered as valid moves and are essentially two sides of the same coin. 
 
+\par AlphaGo and AlphaGo Zero took this mindset and applied it universally. Moves like the shoulder hit are based on this mentality and are applied throughout a game. There are opening corner enclosures that devote multiple moves without the guarentee of territory. Even more abstract ideas like intentionally provoking pointless fights and strugging to live in unwinnable situations becasue of the positive side effects they generate. 
+
+%Maybe talk about the throw in 
+
+\par Even though these AIs have shown great innovation in many aspects of the gmae, there are some positions that are difficult for the Ais to grasp. The most basic of these is called a ladder. 
+
+%Draw a ladder 
+
+\par This shape is extremely common and its existence can be felt in every Go game. The sevarity of it is a defining moment in every Go players introduction to the game. The winding pattern it makes across the board is so immedately identifiable that most people won't be tricked by it more than once or twice. 
+
+\par Dispite how good people are at identiying this pattern, AIs struggle with it greatly, often being one of the last core principles that it learns. This is because the AIs will try to cut their exploration of the game tree prematurly short, and evaluate the board position while the ladder is unresolved. This leads to many games where the AI gets tricked by ladders repeatedly until it is confident enough with the pattern to explore the game tree to its conclusion. 
+
+%ELF
+
+%Maybe cite some of the things nick sibiki talks about
+
+%Maybe cite the opening priority chart that lucas sent 
+
+
+\par These resuts would seem to indicate a certain personality with the way these AIs learn the game of Go. They seem to simaltaniously have locally consider every position on the board, while having hard times understanding global consequences of moves. They are preticularlly adapt at recognizing intangable values due to their training being entirely data driven. The data used to train them on tasks can make them more adept at the individual task, while reducing their overall preformance. The reasoning behind the moves it makes can't be logically understood the ways that other player's actions can be. 
+
+\par This makes the application of machine learning particularlly interesting. When training an AI to prescreen applicants, will it be able to identify all of the intangable merits of a minority candidate, or will its training data cause it to discriminate agaisnt the candidate. Will.....
+
 \section{Conclusion}
-Though our hopes of competing against these AIs has been quashed, there is still much to be learned from them. Chess and Go are games with millennia of human study. To analyze how it is that deep learning was able to solve Chess and Go will give us insight into how AIs approach other tasks in less studied fields. The way that these AI learn the game of Go, and the challenges they had, might just reveal why self driving cars can crash, or why image recognition fails on certain objects, or even why hiring AIs discriminate against minority candidates. Further research should be undertaken to explore the interdisciplinary applications of AI's approach to Chess and Go. 
+Though our hopes of compeiting against these AIs has been quashed, there is still much to be learned from them. Chess and Go are games with millennia of human study. To analyze how it is that deep learning was able to solve Chess and Go will give us insight into how AIs approach other tasks in less studied fields. The way that these AI learn the game of Go, and the challenges they had, might just reveal why self driving cars can crash, or why image recognition fails on certain objects, or even why hiring AIs discriminate against minority candidates. Further research should be undertaken to explore the interdisciplinary applications of AI's approach to Chess and Go. 
 
 \begin{thebibliography}{1} 
 \bibitem{DeepBlue}
