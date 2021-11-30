@@ -59,7 +59,7 @@ def inSet(x,y):
 
 screen = pygame.display.set_mode((width, height))
 
-for i in range(0,2):
+for i in range(0,1):
     for x in range(0, width//grid):
         if x % 10 == 0:
             pygame.display.flip()
@@ -77,12 +77,12 @@ for i in range(0,2):
                 draw_black(x,y)
             else:    
                 draw_gray(x,y, count)
-    frameTop = 0.275
-    frameBottom = -0.1
-    frameLeft = -1.5
-    frameRight = -1
-    pygame.display.flip()
-    time.sleep(1)
+    #frameTop = 0.275
+    #frameBottom = -0.1
+    #frameLeft = -1.5
+    #frameRight = -1
+    #pygame.display.flip()
+    #time.sleep(1)
 
 
 
