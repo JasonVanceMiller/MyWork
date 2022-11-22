@@ -1,0 +1,163 @@
+
+\documentclass[12pt]{IEEEtran}
+
+
+
+
+\usepackage{geometry} 
+\geometry{a4paper}
+\usepackage{igo}
+%\usepackage{amsmath}               
+%\usepackage{amsfonts}              
+%\usepackage{amsthm}                
+\usepackage{xcolor}
+\usepackage{titletoc}
+%\usepackage{pgfplots}
+%\usepackage{tikz}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+   filecolor=blue,
+  linkcolor=blue,
+   urlcolor=blue,
+   linktoc=all
+}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{sol}[thm]{Solution}
+\newtheorem{mydef}[thm]{Definition}
+
+\definecolor{dank}{RGB}{10,10,150}
+\newcommand{\quest}[1]{\textcolor{dank}{#1}}
+\newcommand{\com}[1]{\textcolor{blue}{#1}}
+
+\setcounter{secnumdepth}{0} % sections are level 1
+
+\title{Go Manifesto}
+\author{Jason Miller}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+\section{3-4 vs 4-4}
+Of all corner moves, it makes sense that these two are the ones worth considering. The 4-4 is the smallest move that doesn't consider the corner and the 3-4 is the largest move that does defend the corner. Of these, there are the following joseki. 
+\gobansize{19}
+\igofontsize{16}
+\black[1]{c4}
+\gobansymbol{e4}{a}
+\gobansymbol{e3}{b}
+\gobansymbol{d4}{c}
+\showgoban[a1,l7]
+\\
+\cleargoban
+\black[1]{c4,e4,e3,f3,d3,f4,c6,k4}
+\showgoban[a1,l7]
+\\
+\cleargoban
+\black[1]{c4,e4,h4}
+\gobansymbol{c3}{a}
+\gobansymbol{d6}{c}
+\gobansymbol{d7}{b}
+\showgoban[a1,l7]
+\\
+\cleargoban
+\black[1]{c4,e3,d5,h3,f4,f3}
+\showgoban[a1,l7]
+
+
+\section{Joseki}
+
+\section{First 4 moves}
+\igofontsize{9}
+Without more specific math, assuming all moves are either 3-4s or 4-4s, there are $3^4 * 2 = 162$ opening combinations. 3 choices for each corner and a binary of if it is a cross-game or not. From here there are possibilities that can be eliminated, either player can guarantee that they get one of 4 positions at the start.\\ 
+\cleargoban
+\white{d4,d16}
+\black{r4,q17}
+\showfullgoban
+\\
+\cleargoban
+\white{d4,c16}
+\black{q4,q17}
+\showfullgoban
+
+
+\par
+Here is a problem. Aiming for one of these 4 can cause the opponent to have up to 6 possibilities, 2 more from 3-4s pointing in the same direction. To stop the synergistic 3-4s you have to be vulnerable to cross-games. I am pretty agnostic to the direction of play, so I don't believe cross-games to be an advantage to either color, but it is a huge knowledge check, so it should be avoided by both players because there is no guarantee to get it, and thus shouldn't be studied too deeply. 
+\par 
+From here we can try to choose which of the 4 openings to choose from. I will be referring to them as 2 4-4s, 2 3-4s, Chinese and micro. Of these, the ais seem to prefer 2 4-4s for white and micro for black by the slimmest of margins. 
+\par Here is my understanding of why this is the preferred opening, even though it is not justified by ai. You want to have the option to improve your side of the board instead of having to always attack. Because 2 3-4s point in opposite directions this is hard to do, so we can eliminate that opening. For 4-4, we have the following situation. 
+
+\cleargoban
+\white{d4,d16}
+\black{q4,q16}
+\black[1]{q10,o3,p3,o4,q6,k4,c14,o17,p17,o16,q14,k16}
+\showfullgoban
+\par
+This result is slightly bad for black, in my opinion, and in the opinion of the ai. The ai plays this slightly differently, but the reasoning is similar. Because white has the option to approach from the outside, they can push black to be all on one side and make the 1 stone over-concentrated. This will be a common theme that we will see with early side moves because you lose sente, you can't influence the direction. This leads to conservative side moves being over-concentrated or greedy side moves being bullied. A good example of this is the following game.
+\cleargoban
+\white{d4,q3}
+\black{d16,q16}
+\black[1]{q13,q6,d10,f17,e17,f16,c14,k16,o17,k4,c6}
+\showfullgoban
+\par
+Black played two side moves from 4-4s, one greedy and one conservative, 3 and 1 respectively. The greedy one was a bit overconcentrated after 7 and the conservative one was overconcentrated after 9, which still can be invaded later. Because these moves aren't sente they could have been played later and should be evaluated as such. 3 should have been played after 11 to get correct spacing, while 1 should be lower, perhaps at r8. 
+\par 
+This motivates the idea of the Chinese opening. A 3-4 can only be attacked from one side, so we can't be pushed into being over-concentrated as easily. 
+ \cleargoban
+\white{d4,d16}
+\black{q4,q17}
+\black[1]{r11}
+\showfullgoban
+
+If white wants to attack, the 1 stone is properly placed to be disruptive. 
+ \cleargoban
+\white{d4,d16}
+\black{q4,q17}
+\black[1]{r11,r6,r8,p6,o3,n6,c14,r15,r16,q15,o16,q12,q11}
+\showfullgoban
+
+This is a bad result for white but can be avoided. The weakness for black comes from the 3-4. There are several invasions of the 3-4 that are much closer to the corner where the severity creates a direction choice. This was a pretty recent development. In these, the 1 stone isn't useful. 3-4 Joseki are quite complicated, but here is one example. 
+
+ \cleargoban
+\white{d4,d16}
+\black{q4,q17}
+\black[1]{r11,q16,r16,p17,r17,p16,q15,p15,q14,p14,q12,k16}
+\showfullgoban
+\par This is slightly winning for white. Normally white will cut this joseki short by playing the knight's move instead of 8, but running the group into k11 gives white points and black becomes overconcentrated. 
+\par
+This leads to our final position, the micro. The synergy between the two stones is as follows:
+ \cleargoban
+\white{d4,d16}
+\black{q4,r16}
+\black[1]{o16}
+\showfullgoban
+
+This is a very solid idea that doesn't have many of the same weaknesses as other openings. Additionally, modifications can be made to this to hold onto sente for slightly longer before making a synergistic move. 
+ \cleargoban
+\white{d4,d16}
+\black{q4,r16}
+\black[1]{f17,c14,o17,e17,f16}
+\showfullgoban
+\par
+With this in mind, it makes sense that black would want the micro-opening. With that in mind, what opening should white pick? There is some idea of white risking a cross-game by playing the following, which opens a whole can of worms. 
+\cleargoban
+\black[1]{q4,d4,r16,d17}
+\showfullgoban
+\par But assuming that white does not want to play a cross game, they have to choose between having black approach a 3-4 or 4-4, and approaching a 4-4 is slightly preferred for white. This makes the "optimal" opening: 
+\cleargoban
+\black[1]{q4,d16,r16,d4}
+\showfullgoban
+\par And here is a reasonable way the game could proceed. 
+\white{d4,d16}
+\black{q4,r16}
+\black[1]{f17,e17,f16,d14,o17,f3,q10}
+\showfullgoban
+
+\end{document}
+
