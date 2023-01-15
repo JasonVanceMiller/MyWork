@@ -1,0 +1,47 @@
+syntax on
+"syntax sync fromstart
+
+set nu rnu 
+set hlsearch
+set incsearch
+set autoindent
+set ignorecase
+"set ruler
+set noruler
+set expandtab
+set nowrap
+
+set so=5
+set sidescrolloff=5
+
+highlight LineNr ctermfg=grey
+highlight CursorLineNr ctermfg=yellow cterm=bold
+highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE
+
+set cursorline
+
+augroup numbertoggle
+	autocmd!
+	autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu | endif
+	autocmd BufLeave,FocusLost,InsertEnter,WinEnter   * if &nu                  | set nornu | endif
+augroup END
+
+hi normal ctermfg=15 ctermbg=None cterm=None
+hi search ctermfg=11 ctermbg=238 cterm=bold
+hi incsearch ctermfg=11 ctermbg=238 cterm=bold
+hi vertsplit ctermfg=15 ctermbg=None cterm=bold
+hi statusline ctermfg=11 ctermbg=None cterm=bold,underline
+hi statuslinenc ctermfg=15 ctermbg=None cterm=underline
+hi visual ctermfg=None ctermbg=238 cterm=None
+hi endofbuffer ctermfg=None ctermbg=None cterm=bold
+hi matchparen  ctermfg=None ctermbg=None cterm=bold
+
+autocmd VimEnter,WinEnter,BufEnter,FocusGained * set syntax=mysyntax
+hi comment ctermfg=81 
+hi keyWords ctermfg=203
+hi builtIns ctermfg=161
+hi ops ctermfg=210 
+hi consts ctermfg=219 
+hi function ctermfg=214 
+hi types ctermfg=217 
+
